@@ -47,6 +47,15 @@ img {
   border-radius: 10px;
 }
 
+
+.popular_item_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  
+}
+
 .btn__blue {
   color: white;
   background-color: var(--blue);
@@ -64,6 +73,8 @@ img {
   border-radius: 10px;
   font-weight: bold;
   padding-bottom: 1.5rem;
+  flex-basis: 30%;
+  
 }
 .popular_item img {
   width: 80%;
