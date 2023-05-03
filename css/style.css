@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 .container {
   padding-left: 5vw;
@@ -16,11 +15,10 @@ header {
 nav a {
   text-decoration: none;
 }
-.carousel-item {
-  /* border-radius: 10px; */
-  height: 60vh;
-}
+
 .carousel-inner {
   border-radius: 10px;
 }
-
+img {
+  width: 100%;
+}
