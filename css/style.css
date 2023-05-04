@@ -70,6 +70,9 @@ img {
   padding: 0.5rem;
   font-weight: bold;
 }
+.price {
+  font-size: 1.2rem;
+}
 .popular_item {
   display: flex;
   flex-direction: column;
@@ -96,4 +99,21 @@ img {
 
 a .popular_item__btn {
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .popular_item {
+    flex-basis: 47%;
+  }
+  .popular_item_wrapper {
+    gap: 5%;
+  }
+}
+@media (max-width: 767px) {
+  .popular_item {
+    flex-basis: 47%;
+  }
+  .popular_item_wrapper {
+    row-gap: 1rem;
+  }
 }
