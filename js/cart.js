@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
+  renderDiv();
   btn_render.addEventListener("click", renderDiv);
 
   console.log(cartBlock);
