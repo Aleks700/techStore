@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/slider.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <!-- <link rel="stylesheet" href="css/slider.css" /> -->
     <title>Document</title>
   </head>
   <body>
@@ -22,8 +23,38 @@
     <main>
       <section class="container">
         <h1>Cart</h1>
+        <div class="shopping-cart">
+          <div class="shopping-cart__item">
+            <div class="shopping-cart__item_preview">
+              <img src="/img/catalog/TV.png" alt="" />
+            </div>
+            <div class="shopping-cart__text"">
+              <p>Describe item</p>
+              <p>Цена: <span class="bold">Price</span></p>
+            </div>
+            <div class="counter-wrapper">
+              <button>-</button>
+              <button class="counter">3</button>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="shopping-cart__item">
+            <div class="shopping-cart__item_preview">
+              <img src="/img/catalog/TV.png" alt="" />
+            </div>
+            <div class="shopping-cart__text">
+              <p>Телевизор Hisense 32" 32A4BG HD Smart Black 1</p>
+              <p>Цена: <span class="bold">Price</span></p>
+            </div>
+            <div class="counter-wrapper">
+              <button>-</button>
+              <button class="counter">3</button>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/cart.js"></script>
   </body>
 </html>

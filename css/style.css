@@ -106,9 +106,19 @@ a .popular_item__btn {
     flex-basis: 47%;
   }
   .popular_item_wrapper {
-    gap: 5%;
+    row-gap: 1rem;
   }
 }
+@media (max-width: 500px) {
+  .popular_item {
+    flex-basis: 100%;
+  }
+  .popular_item_wrapper {
+    justify-content: center;
+  }
+}
+
+/* 
 @media (max-width: 767px) {
   .popular_item {
     flex-basis: 47%;
@@ -116,4 +126,4 @@ a .popular_item__btn {
   .popular_item_wrapper {
     row-gap: 1rem;
   }
-}
+} */

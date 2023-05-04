@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const popularItemWrap = document.querySelector(".popular_item_wrapper");
+
   popularItemWrap.addEventListener("click", (e) => {
     const btn = e.target;
     if (btn.classList.contains("btn__blue")) {
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(techStore);
       if (techStore !== null) {
         const parsed = JSON.parse(techStore);
+        console.log(parsed);
         const findElement = parsed.findIndex(
           (elem) => elem.productName === productName
         );
@@ -25,22 +27,23 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log(-1);
           localStorage.setItem(
             "tech_store",
-            JSON.stringify(
-              parsed.push({
+            JSON.stringify([
+              ...parsed,
+              {
                 productName: productName,
                 imgSrc: imgSrc,
                 price: price,
                 count: 1,
-              })
-            )
+              },
+            ])
           );
         } else {
-          console.log(parsed[findElement].count);
+          console.log(parsed[findElement].count, "before");
+          parsed[findElement].count = parsed[findElement].count + 1;
+          console.log(parsed[findElement].count, "after");
+          localStorage.setItem("tech_store", JSON.stringify(parsed));
+          console.log(JSON.parse(localStorage.getItem("tech_store")));
         }
-
-        // console.log(findElement);
-        // console.log(parsed[findElement]);
-        // console.log;
       } else {
         localStorage.setItem(
           "tech_store",
