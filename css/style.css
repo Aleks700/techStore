@@ -81,6 +81,7 @@ img {
   font-weight: bold;
   padding-bottom: 1.5rem;
   flex-basis: 30%;
+  text-align: center;
 }
 .popular_item img {
   width: 80%;
