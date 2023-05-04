@@ -47,13 +47,11 @@ img {
   border-radius: 10px;
 }
 
-
-.popular_item_wrapper{
+.popular_item_wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
-  
 }
 
 .btn__blue {
@@ -66,7 +64,7 @@ img {
 }
 .active-btn__blue {
   background-color: white;
-  color:  var(--blue);
+  color: var(--blue);
   border-color: var(--blue);
   border-radius: 5px;
   padding: 0.5rem;
@@ -83,12 +81,18 @@ img {
   font-weight: bold;
   padding-bottom: 1.5rem;
   flex-basis: 30%;
-  
 }
 .popular_item img {
   width: 80%;
 }
 
+.popular_item a {
+  width: 80%;
+}
 .popular_item__btn {
-  width: 90%;
+  width: 80%;
+}
+
+a .popular_item__btn {
+  width: 100%;
 }
