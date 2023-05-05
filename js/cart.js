@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                           <img src=${imgSrc} alt="" />
                                       </div>
                                       <div class="shopping-cart__text">
-                                          <p data-name='${productName}' >${productName}</p>
-                                          <p>Цена: <span class="bold">${price}</span></p>
+                                          <p data-name='${productName}' > Наименование:<span class="bold">${productName}</span></p>
+                                          <p>Цена: <span class="bold">${price}₸</span></p>
                                       </div>
                                       <div class="counter-wrapper">
                                         <button class="trash-basket"><img src = 'img/trash.svg' class="trash-basket"></button> 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (prev, current) => prev + current.price * current.count,
         0
       );
-      sumPriceDiv.innerHTML = `<h3>Итого:  ${sumPriceValue}</h3>`;
+      sumPriceDiv.innerHTML = `<h3>Итого:  ${sumPriceValue}₸</h3>`;
       console.log("sumPriceValue", sumPriceValue);
       cartBlock.appendChild(sumPriceDiv);
     } else {
