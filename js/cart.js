@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (techStore.length > 0) {
       techStore.forEach((element) => {
         console.log(element);
-        // const { count, imgSrc, price, productName } = element;
         const count = element.count;
         const imgSrc = element.imgSrc;
         const price = element.price;
