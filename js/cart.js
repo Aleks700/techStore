@@ -37,12 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   cartBlock.addEventListener('click',(e)=>{
-    
-    const parentDiv = e.target.parentElement.parentElement
-    console.log(parentDiv.querySelector('[data-name]').dataset.name)  
-    console.log(parentDiv)
-    const techStore = JSON.parse(localStorage.getItem("tech_store"));
+    const targetClass =  e.target.classList
+    if(targetClass.contains('decreaser') ||targetClass.contains('increaser')){
+      const parentDiv = e.target.parentElement.parentElement
+      const productName = parentDiv.querySelector('[data-name]').dataset.name 
+      console.log(parentDiv)
+      const techStore = JSON.parse(localStorage.getItem("tech_store"));
   
+    }
+
   })
 
 
