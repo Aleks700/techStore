@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   //   const btn_render = document.querySelector(".render");
   const cartBlock = document.querySelector(".shopping-cart");
-  function renderDiv() {
+  function renderCart() {
     cartBlock.innerHTML = "";
     const techStore = JSON.parse(localStorage.getItem("tech_store"));
     if (techStore.length > 0) {
@@ -31,6 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
                                    `;
         cartBlock.appendChild(cartItem);
       });
+
+      const sumPriceDiv = document.createElement("div");
+      const sumPriceValue = techStore.reduce(
+        (prev, current) => prev + current.price * current.count,
+        0
+      );
+      sumPriceDiv.innerHTML = `<h3>Итого:  ${sumPriceValue}</h3>`;
+      console.log("sumPriceValue", sumPriceValue);
+      cartBlock.appendChild(sumPriceDiv);
+    } else {
+      const cartItem = document.createElement("div");
+      cartItem.innerHTML = "<h1>Корзина пустая</h1>";
+      cartBlock.appendChild(cartItem);
     }
   }
 
@@ -70,11 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       //   localStorage.setItem("tech_store", JSON.stringify(parsed));
-      renderDiv();
+      renderCart();
     }
   });
 
-  renderDiv();
+  renderCart();
 
   console.log(cartBlock);
 });
