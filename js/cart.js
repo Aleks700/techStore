@@ -6,12 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const techStore = JSON.parse(localStorage.getItem("tech_store"));
     if (techStore.length > 0) {
       techStore.forEach((element) => {
+        console.log(element);
         // const { count, imgSrc, price, productName } = element;
         const count = element.count;
         const imgSrc = element.imgSrc;
         const price = element.price;
         const productName = element.productName;
         const cartItem = document.createElement("div");
+        console.log(count, "count");
         cartItem.classList.add("shopping-cart__item");
 
         cartItem.innerHTML = `  
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                           <img src=${imgSrc} alt="" />
                                       </div>
                                       <div class="shopping-cart__text">
-                                          <p data-name='${productName}' > Наименование:<span class="bold">${productName}</span></p>
+                                          <p data-name='${productName}'>Наименование: <span class='bold'> ${productName}</span> </p>
                                           <p>Цена: <span class="bold">${price}₸</span></p>
                                       </div>
                                       <div class="counter-wrapper">
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   cartBlock.addEventListener("click", (e) => {
-    console.log(e.target);
+    console.log(e.target, "e.target");
     const targetClass = e.target.classList;
 
     if (
@@ -57,18 +59,21 @@ document.addEventListener("DOMContentLoaded", () => {
       targetClass.contains("trash-basket")
     ) {
       const parentDiv = e.target.closest(".shopping-cart__item");
-      const productName = parentDiv.querySelector("[data-name]").innerText;
+      const productName = parentDiv.querySelector("[data-name]").dataset.name;
 
       const parsed = JSON.parse(localStorage.getItem("tech_store"));
       const findElement = parsed.findIndex(
         (elem) => elem.productName === productName
       );
-
+      console.log(findElement);
+      console.log(parsed[findElement]);
       if (targetClass.contains("increaser")) {
+        console.log(findElement);
         parsed[findElement].count = parsed[findElement].count + 1;
         localStorage.setItem("tech_store", JSON.stringify(parsed));
       }
       if (targetClass.contains("decreaser") && parsed[findElement].count > 1) {
+        console.log(findElement);
         parsed[findElement].count = parsed[findElement].count - 1;
         localStorage.setItem("tech_store", JSON.stringify(parsed));
       }
