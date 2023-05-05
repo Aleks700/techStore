@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("cart");
   const btn_render = document.querySelector(".render");
+  const cartBlock = document.querySelector(".shopping-cart");
   function renderDiv() {
-    const cartBlock = document.querySelector(".shopping-cart");
     cartBlock.innerHTML = "";
     const techStore = JSON.parse(localStorage.getItem("tech_store"));
     if (techStore.length > 0) {
@@ -21,22 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
                                           <img src=${imgSrc} alt="" />
                                       </div>
                                       <div class="shopping-cart__text">
-                                          <p>${productName}</p>
+                                          <p data-name='${productName}' >${productName}</p>
                                           <p>Цена: <span class="bold">${price}</span></p>
                                       </div>
                                       <div class="counter-wrapper">
-                                          <button>-</button>
+                                          <button class='decreaser'>-</button>
                                           <button class="counter">${count}</button>
-                                          <button>+</button>
+                                          <button class='increaser'>+</button>
                                       </div>
                                    `;
         cartBlock.appendChild(cartItem);
       });
     }
   }
+
+
+  cartBlock.addEventListener('click',(e)=>{
+    
+    const parentDiv = e.target.parentElement.parentElement
+    console.log(parentDiv.querySelector('[data-name]').dataset.name)  
+    console.log(parentDiv)
+    const techStore = JSON.parse(localStorage.getItem("tech_store"));
+  
+  })
+
+
+
   renderDiv();
   btn_render.addEventListener("click", renderDiv);
 
   console.log(cartBlock);
-  console.log(techStore);
+  
 });
