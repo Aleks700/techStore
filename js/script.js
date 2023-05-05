@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const productName = parentDiv.querySelector(".product_name").innerText;
       const imgSrc = parentDiv.querySelector("img").src;
       const techStore = localStorage.getItem("tech_store");
-      console.log(techStore);
       if (techStore !== null) {
         const parsed = JSON.parse(techStore);
         console.log(parsed);
